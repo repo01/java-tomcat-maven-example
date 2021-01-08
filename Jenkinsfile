@@ -9,4 +9,7 @@ node
     {
         sh "${mvnHome}/bin/mvn clean package"
     }
+    stage ("Deploy To tomcat") {
+        sh "sudo cp target/*.war /var/lib/tomcat9/webapps/"
+    }
 }    
